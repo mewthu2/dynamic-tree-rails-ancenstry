@@ -22,5 +22,9 @@ module SAA
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
+
+    config.after_initialize do
+      ActiveRecord::Migrator.migrate (RAILS_ROOT + "/db/migrate" )
+    end
   end
 end
