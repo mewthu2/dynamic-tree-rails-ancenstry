@@ -24,7 +24,7 @@ module SAA
     config.active_record.raise_in_transactional_callbacks = true
 
     config.after_initialize do
-      ActiveRecord::Migrator.migrate (RAILS_ROOT + "/db/migrate" )
+      ActiveRecord::Migrator.migrate(Rails.root.join("db/migrate"), nil)
     end
   end
 end
