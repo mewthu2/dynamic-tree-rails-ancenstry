@@ -1,0 +1,9 @@
+<li data-node-id='<%=node.id%>'><%= node.name%>
+	<%if node.has_children? %>
+		<ul>
+			<%node.children.each do |child|%>
+				<%= render :partial => "node_nested.html.erb", :locals =>{:node => child}%>
+			<%end%>
+		</ul>
+	<%end%>
+</li>

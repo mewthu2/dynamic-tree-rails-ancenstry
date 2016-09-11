@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+<div class="container-fluid" >
+  <div class="row">
+    <div class="col-md-11">
+      <h3 class="text-success">Manage Nodes</h3>
+      <%= render :partial => "node.html.erb", :locals =>{:nodes => @nodes}%>
+    </div>
+    <!-- <div class="table-responsive">
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th colspan="3">Actions</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% @nodes.each do |node| %>
+          <tr>
+            <td><%= node.name %></td>
+            <td><%= link_to 'Show', node %></td>
+            <td><%= link_to 'Edit', edit_node_path(node) %></td>
+            <td><%= link_to 'Destroy', node, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          </tr>
+        <% end %>
+        </tbody>
+      </table>
+    </div> -->
+  </div>
+</div>

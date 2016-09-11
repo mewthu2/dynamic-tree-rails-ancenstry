@@ -1,0 +1,28 @@
+<!-- _top_panel.html.erb -->
+<div class="navbar-header">
+  <button aria-controls="navbar" aria-expanded="false" data-target="#navbar" data-toggle="collapse" class="navbar-toggle collapsed" type="button">
+    <span class="sr-only">Toggle navigation</span>
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+  </button>
+  <%=link_to "#{APP_NAME} <span style='font-size:50%'>#{APP_TAGLINE}</span>".html_safe, root_path, {:class => "navbar-brand"}%>
+</div>
+<div class="navbar-collapse collapse" id="navbar">
+  <ul class="nav navbar-nav navbar-right">
+      <%if current_user%>
+        <li>
+          <%= link_to "#{current_user.name}", {:controller => "users", :action => "show", :id => current_user.id}, {:remote => true}%>
+        </li>
+        <li><%= link_to "Logout", {:controller => "session", :action => "destroy", :id => current_user.id}, method: :delete%></li>
+      <%else%>
+        <li><a href="#">Guest</a></li>
+        <li><%= link_to "Login", {:controller => "session", :action => "new"}%></li>
+        <li><%= link_to "Sign up", {:controller => "users", :action => "new"}%></li>
+      <%end%>
+  </ul>
+<!--   <form class="navbar-form navbar-right">
+    <input type="text" placeholder="Search..." class="form-control">
+  </form> -->
+ 
+</div>

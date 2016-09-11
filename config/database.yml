@@ -1,0 +1,55 @@
+# development:
+#   adapter: mysql2
+#   database: saa
+#   username: root
+#   password: root
+#   timeout: 1800
+#   host: localhost
+
+# test:
+#   adapter: mysql2
+#   database: saa
+#   username: root
+#   password: root
+#   timeout: 1800
+#   host: localhost
+
+# production:
+#   adapter: mysql2
+#   database: saa
+#   username: root
+#   password: root
+#   timeout: 1800
+#   host: localhost
+
+
+development:
+  adapter: postgresql
+  database: test
+  # username: root
+  # password: root
+  # host: localhost
+  pool: 5
+  timeout: 5000
+
+# Warning: The database defined as "test" will be erased and
+# re-generated from your development database when you run "rake".
+# Do not set this db to the same as development or production.
+test:
+  adapter: postgresql
+  database: test
+  # username: root
+  # password: root
+  # host: localhost
+  pool: 5
+  timeout: 5000
+
+
+production:
+  adapter: postgresql
+  database: test
+  # username: root
+  # password: root
+  # host: localhost
+  pool: 5
+  timeout: 5000

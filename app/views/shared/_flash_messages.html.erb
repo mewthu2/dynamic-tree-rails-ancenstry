@@ -1,0 +1,13 @@
+<% flash.each do |key, messages| %>
+	<div class="alert alert-success ">
+		<%	
+			messages = messages.is_a?(String) ? [messages] : messages	
+		%>
+		<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+		
+		<%messages.each do |message|%>
+			<%= content_tag(:div, message, :class => "flash #{key}") %>
+		<%end%>
+		
+	</div>
+<% end %>

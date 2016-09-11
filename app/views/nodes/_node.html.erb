@@ -1,0 +1,16 @@
+<div class="easy-tree">
+	<ul>
+		<% nodes.each do |node| %>
+			<%= render :partial => "node_nested.html.erb", :locals =>{:node => node}%>
+		<%end%>
+	</ul>
+</div>
+<script type="text/javascript">
+    (function ($) {
+        $('.easy-tree').EasyTree({
+            addable: true,
+            editable: true,
+            deletable: true
+        });
+    })(jQuery)
+</script>

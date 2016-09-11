@@ -1,0 +1,12 @@
+<%
+	@noty_type = @noty_type||"success"
+	@noty_layout = @noty_layout||"topCenter"
+	@noty_timeout = @noty_timeout||2000
+%>
+<%if @noty_text%>
+	<script type="text/javascript">
+		try{
+			generate(<%=@noty_text%>, <%=@noty_type%>, <%=@noty_layout%>, <%=@noty_timeout%>)
+		}catch(e){alert(e)}
+	</script>
+<%end%>
